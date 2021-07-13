@@ -1,0 +1,21 @@
+.form-register {
+    display: flex;
+    flex-direction: column;
+    max-width: 80vh;
+    margin:50px auto;
+}
+
+.message-return {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+}
+
+.select-form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+

@@ -38,11 +38,17 @@ const deleteEmployee = async (id) => {
   return true;
 };
 
-const findByField = async (field) => {
-  const search = field[Object.keys(field)[0]];
+const findByField = async (query) => {
+  console.log(query);
   const result = await Funcionarios.findAll({
     where: {
-      [Object.keys(field)[0]]: { [Op.like]: `%${search}%` },
+      [Op.and]: [
+        { nome: { [Op.like]: `%${query.nome}%` } },
+        { setor: { [Op.like]: `%${query.setor}%` } },
+        { cargo: { [Op.like]: `%${query.cargo}%` } },
+        { nivel: { [Op.like]: `%${query.nivel}%` } },
+
+      ],
     },
   });
   return result;

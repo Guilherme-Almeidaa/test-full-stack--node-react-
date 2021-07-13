@@ -14,7 +14,7 @@ module.exports = {
       },
       {
         nome: 'Pedro',
-        email: 'predro@hotmail.com',
+        email: 'pedro@hotmail.com',
         data_nascimento: Sequelize.literal('CURRENT_TIMESTAMP'),
         data_admissao: Sequelize.literal('CURRENT_TIMESTAMP'),
         setor: 'técnico',

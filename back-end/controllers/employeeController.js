@@ -96,10 +96,6 @@ const findByField = async (req, res) => {
   try {
     const { query } = req;
     const result = await employeeService.findByField(query);
-    if (result.length === 0) {
-      res.status(statusCodeMessages.UserNotFound.statusCode);
-      return res.json(statusCodeMessages.UserNotFound.errorMessage);
-    }
     res.status(statusCodeMessages.success);
     return res.json(result);
   } catch (error) {

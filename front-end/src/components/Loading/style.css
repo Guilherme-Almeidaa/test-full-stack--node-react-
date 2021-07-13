@@ -1,0 +1,16 @@
+.loading {
+    width: 100px;
+    height: 100px;
+    border:20px solid;
+    border-radius: 50%;
+    border-top-color: transparent;
+    margin:0 auto;
+    color: #ff8906;
+    animation: load 0.6s infinite linear;
+}
+
+@keyframes load {
+    to {
+        transform: rotate(360deg);
+    }
+}
