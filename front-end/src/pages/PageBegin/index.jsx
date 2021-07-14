@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import Employee from '../../components/Employee';
 import context from '../../provider/context';
-import { requestFilterEmployees } from '../../utilities/apiEmployees';
+import { requestFilterEmployees } from '../../api/apiEmployees';
 import { Table } from 'react-bootstrap';
 import './style.css';
 import Loading from '../../components/Loading';
@@ -22,7 +22,7 @@ function PageBegin() {
         setEmployees(response);
       });
       setIsLoading(false);
-    }, 1000);
+    }, 500);
   }, [statutsRequest, setEmployees, cargo, nivel, setor, nome, setEmployee]);
 
   return (

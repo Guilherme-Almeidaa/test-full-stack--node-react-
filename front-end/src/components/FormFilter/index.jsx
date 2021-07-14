@@ -52,7 +52,6 @@ function Header() {
           >
             <Form.Label className="label">Nome</Form.Label>
             <Form.Control
-              required
               type="text"
               value={filterEmployee.nome}
               name="nome"

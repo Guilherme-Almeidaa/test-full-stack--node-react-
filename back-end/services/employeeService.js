@@ -46,7 +46,6 @@ const findByField = async (query) => {
         { setor: { [Op.like]: `%${query.setor}%` } },
         { cargo: { [Op.like]: `%${query.cargo}%` } },
         { nivel: { [Op.like]: `%${query.nivel}%` } },
-
       ],
     },
     order: [

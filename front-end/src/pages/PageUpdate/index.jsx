@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import context from '../../provider/context';
 import Form from '../../components/Form';
-import { findById, requestUpdateEmployee } from '../../utilities/apiEmployees';
+import { findById, requestUpdateEmployee } from '../../api/apiEmployees';
 import Loading from '../../components/Loading';
 
 function PageUpdate({ match }) {

@@ -10,10 +10,12 @@ route.get('/:id', employeeController.findById);
 route.post('/register',
   middleware.checkFieldsIsNullMiddleware,
   middleware.checkFieldsIsEmptyMiddleware,
+  middleware.CheckFormatEmailMiddleware,
   employeeController.insert);
 route.put('/update/:id',
   middleware.checkFieldsIsNullMiddleware,
   middleware.checkFieldsIsEmptyMiddleware,
+  middleware.CheckFormatEmailMiddleware,
   employeeController.update);
 route.delete('/delete/:id', employeeController.deleteEmployee);
 

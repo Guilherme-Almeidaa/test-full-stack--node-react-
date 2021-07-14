@@ -2,17 +2,6 @@ import axios from "axios";
 
 const URL = 'http://localhost:3001';
 
-export const requestAllEmployees = async () => {
-  const options = {
-    method: 'GET',
-    url: `${URL}/employees`,
-  };
-
-  return axios.request(options).then((response) => {
-    return response.data
-  })
-}
-
 export const requestRegisterEmployee = async (employee) => {
   const options = {
     method: 'POST',

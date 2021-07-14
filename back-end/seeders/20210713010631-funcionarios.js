@@ -8,7 +8,7 @@ module.exports = {
         data_admissao: Sequelize.literal('CURRENT_TIMESTAMP'),
         setor: 'Compras',
         cargo: 'Auxiliar',
-        nivel: 'Junior',
+        nivel: 'Júnior',
         audit_data_insert: Sequelize.literal('CURRENT_TIMESTAMP'),
         audit_data_update: Sequelize.literal('CURRENT_TIMESTAMP'),
       },

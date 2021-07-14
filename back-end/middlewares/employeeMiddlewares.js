@@ -37,11 +37,17 @@ const checkFieldsIsNull = (fields) => {
 
 const checkFieldsIsEmptyMiddleware = (req, res, next) => {
   const field = checkFieldsIsEmpty(req.body);
+  /*
+   Aqui formato o nome o campo para ficar idêntico ao formulaŕio
+   para facilitar o entendimento do usuário.
+  */
+  const fieldConvert = field.toString();
+  const fieldFormated = fieldConvert.toString()[0].toUpperCase() + fieldConvert.substr(1);
   if (field !== true) {
     res.status(statusCodeMessages.badRequest);
     return res.json({
       error: {
-        message: `"${field}" field cannot be empty`,
+        message: `O campo "${fieldFormated.replace('_', ' de ')}" não pode estar vazio`,
       },
     });
   }
@@ -61,7 +67,22 @@ const checkFieldsIsNullMiddleware = (req, res, next) => {
   return next();
 };
 
+const checkFormatEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+const CheckFormatEmailMiddleware = (req, res, next) => {
+  if (!checkFormatEmail(req.body.email)) {
+    res.status(statusCodeMessages.badRequest);
+    return res.json({
+      error: {
+        message: 'Email inválido',
+      },
+    });
+  }
+  return next();
+};
+
 module.exports = {
   checkFieldsIsEmptyMiddleware,
   checkFieldsIsNullMiddleware,
+  CheckFormatEmailMiddleware,
 };

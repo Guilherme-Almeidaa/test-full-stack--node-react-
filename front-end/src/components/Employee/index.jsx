@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import './style.css';
-import { requestDeleteEmployee } from '../../utilities/apiEmployees';
+import { requestDeleteEmployee } from '../../api/apiEmployees';
 
 function Employee({ employee, statutsRequest, setStatusRequest }) {
   const {
@@ -21,6 +21,12 @@ function Employee({ employee, statutsRequest, setStatusRequest }) {
   const formatDate = (date, increment) => {
     if (!date) return '';
     const dateFormated = new Date(date);
+    /* 
+    O dia que retorna do formulaŕio dos campos de preenchimento de data retorna
+    com uma diferença de 1 a menos por isso uso o paramentro increment para
+    verificar na chamada da função se vem do banco de dados ou do formulaŕio,
+    caso venha do formulaŕio acrescenta + 1. 
+    */
     const day = increment ? dateFormated.getDate() + 1 : dateFormated.getDate();
     const dayFormated = day < 10 ? `0${day}` : day;
     const month = dateFormated.getMonth() + 1;
@@ -34,7 +40,7 @@ function Employee({ employee, statutsRequest, setStatusRequest }) {
     );
     if (responseUser) {
       requestDeleteEmployee(id).then(_response => {
-        alert('Funcionario excluído');
+        alert('Funcionário excluído');
       });
       setStatusRequest(!statutsRequest);
     }

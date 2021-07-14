@@ -94,6 +94,7 @@ function FormEmployee({ validated, handleSubmit }) {
         <Form.Group controlId="duedate">
           <Form.Label>Data de nascimento</Form.Label>
           <Form.Control
+            required
             type="date"
             name="duedate"
             placeholder="Data de nascimento"
@@ -106,6 +107,7 @@ function FormEmployee({ validated, handleSubmit }) {
         <Form.Group controlId="duedate">
           <Form.Label>Data de admissão</Form.Label>
           <Form.Control
+            required
             type="date"
             name="duedate"
             placeholder="Data de admissão"

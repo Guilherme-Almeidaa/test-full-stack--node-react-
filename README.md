@@ -7,7 +7,7 @@
     <code> MYSQL_USER='root'</code><br>
     <code> MYSQL_PASSWORD='Senha'</code><br>
     <code> MYSQL_NAME='actionsys'</code><br>
-    <h3>dentro do diretóro <code>./back-end</code> de no terminal rode os seguintes comandos:</h3>
+    <h3>dentro do diretóro <code>./back-end</code> no terminal rode os seguintes comandos:</h3>
     <h4> <code>npm install</code></h4>
     <h4> <code>npm run config-data</code></h4>
     <h4> <code>npm start</code></h4>

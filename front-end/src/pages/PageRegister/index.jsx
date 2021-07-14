@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import './style.css';
 import context from '../../provider/context';
 import Form from '../../components/Form';
-import { requestRegisterEmployee } from '../../utilities/apiEmployees';
+import { requestRegisterEmployee } from '../../api/apiEmployees';
 
 function PageRegister() {
   const { employee } = useContext(context);

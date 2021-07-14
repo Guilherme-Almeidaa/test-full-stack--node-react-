@@ -8,7 +8,7 @@ module.exports = {
     "host": process.env.HOSTNAME,
     "timezone": "America/Sao_Paulo",
     "dialect": 'mysql',
-
+    "logging": false,
   },
   "test": {
     "username": "root",
@@ -16,7 +16,8 @@ module.exports = {
     "database": "database_test",
     "host": "127.0.0.1",
     "timezone": "America/Sao_Paulo",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "logging": false,
   },
   "production": {
     "username": "root",
@@ -24,6 +25,7 @@ module.exports = {
     "database": "database_production",
     "host": "127.0.0.1",
     "timezone": "America/Sao_Paulo",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "logging": false,
   }
 }
