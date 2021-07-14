@@ -84,10 +84,10 @@ function FormEmployee({ validated, handleSubmit }) {
               value={employee.nivel}
             >
               <option value="">Nível</option>
-              <option value="Junior">Junior</option>
+              <option value="Júnior">Júnior</option>
               <option value="Pleno">Pleno</option>
-              <option value="Senior">Senior</option>
-              <option value="Estagiario">Estagiario</option>
+              <option value="Sênior">Sênior</option>
+              <option value="Estagiário">Estagiário</option>
             </select>
           </Form.Group>
         </Form.Row>

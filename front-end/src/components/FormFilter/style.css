@@ -6,12 +6,18 @@
     animation-duration: 1s;
     animation-fill-mode:forwards;
     transform: translateY(-20px);
-    justify-content: center;
+    justify-content: space-around;
+    padding: 5px;
 }
 
 .label {
     display: flex;
     justify-content: center;
+    color:white;
+    border:1px solid black;
+    background-color: brown;
+    border-radius: 5px;
+    text-shadow:0.1em 0.1em black;
 }
 
 .cotainer-form-filter {
@@ -19,14 +25,22 @@
     display: flex;
     background-color: rgba(18, 84, 122, 0.459);
     border-radius: 5px;
-    
 }
 
 .button-restart {
-    height: 45%;
+    height: 40%;
     margin:auto 0;
     font-weight: bold;
 }
+
+.select-form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    background-color: rgba(62, 140, 185, 0.527);
+    border-radius: 3px;
+}
+
 
 @keyframes slide {
     from {

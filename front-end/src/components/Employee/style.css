@@ -1,5 +1,15 @@
 .button-edit {
-    color:white;
+    text-shadow:0.1em 0.1em black;
+    
+}
+
+.button-delete {
+    text-shadow:0.1em 0.1em black;
+    
+}
+
+.button-edit:hover {
+    text-shadow:0.1em 0.1em rgb(167, 101, 4);
 }
 
 

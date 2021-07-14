@@ -29,7 +29,6 @@ function PageRegister() {
       });
     setValidated(true);
   };
-  console.log(message);
 
   return (
     <div className="container-form-page">

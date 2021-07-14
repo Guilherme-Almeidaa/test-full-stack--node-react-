@@ -8,7 +8,7 @@ function Header() {
         <Navbar.Brand href="/">Funcionários</Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link href="/">Início</Nav.Link>
-          <Nav.Link href="/register">Adicionar Funcionário</Nav.Link>
+          <Nav.Link href="/register">Cadastrar Funcionário</Nav.Link>
         </Nav>
       </Navbar>
     </header>

@@ -19,7 +19,7 @@ module.exports = {
         data_admissao: Sequelize.literal('CURRENT_TIMESTAMP'),
         setor: 'Engenharia',
         cargo: 'Engenheiro',
-        nivel: 'Senior',
+        nivel: 'Sênior',
         audit_data_insert: Sequelize.literal('CURRENT_TIMESTAMP'),
         audit_data_update: Sequelize.literal('CURRENT_TIMESTAMP'),
       },

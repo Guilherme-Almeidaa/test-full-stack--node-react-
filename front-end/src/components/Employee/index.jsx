@@ -58,7 +58,11 @@ function Employee({ employee, statutsRequest, setStatusRequest }) {
         </Link>
       </td>
       <td>
-        <Button onClick={deleteEmploye} variant="outline-danger">
+        <Button
+          className="button-delete"
+          onClick={deleteEmploye}
+          variant="outline-danger"
+        >
           Exluir
         </Button>
       </td>
