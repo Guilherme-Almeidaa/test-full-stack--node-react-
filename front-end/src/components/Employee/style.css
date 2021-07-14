@@ -1,0 +1,17 @@
+.button-edit {
+    color:white;
+}
+
+
+@media (max-width: 720px) {
+    td,tr {
+        display: block;
+        width: 100%;
+    }
+    tr {
+        display: inline-block;
+    }
+    td {
+        width: 100%;
+    }
+}

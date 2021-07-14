@@ -9,18 +9,18 @@ import PageUpdate from "./pages/PageUpdate";
 
 function App() {
   return (
-    <div className="container">
-      <Provider>
-    <BrowserRouter>
-      <Header/>
-    <Switch>
-      <Route exact path="/" component={PageBegin} />
-      <Route path="/register" component={PageRegister} />
-      <Route path="/employee/:id" render={(props) => <PageUpdate {...props} /> } />
-    </Switch>
-    </BrowserRouter>
+
+    <Provider>
+      <BrowserRouter>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={PageBegin} />
+          <Route path="/register" component={PageRegister} />
+          <Route path="/employee/:id" render={(props) => <PageUpdate {...props} />} />
+        </Switch>
+      </BrowserRouter>
     </Provider>
-    </div>
+
   );
 }
 

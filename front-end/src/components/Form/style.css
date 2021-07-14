@@ -9,6 +9,7 @@
     animation-fill-mode:forwards;
     transform: translateY(-20px);
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 @keyframes slide {

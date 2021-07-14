@@ -38,7 +38,8 @@ const findById = async (req, res) => {
 
 const update = async (req, res) => {
   try {
-    const employee = { ...req.body, audit_data_update: new Date() };
+    const date = new Date();
+    const employee = { ...req.body, audit_data_update: date };
     const { id } = req.params;
     const result = await employeeService.update(employee, id);
     if (!result) {
