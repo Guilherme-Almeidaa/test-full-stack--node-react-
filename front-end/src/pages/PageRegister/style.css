@@ -1,8 +1,25 @@
+.container-form-page {
+    display: flex;
+    justify-content: center;
+}
+
+.container-form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+}
+
 .form-register {
     display: flex;
     flex-direction: column;
-    max-width: 80vh;
-    margin:50px auto;
+    width: 100%;
+    margin: auto;
 }
 
 .message-return {

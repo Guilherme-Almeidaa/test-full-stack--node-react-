@@ -45,13 +45,17 @@ function PageUpdate({match}) {
         
      
        return (
-           <div className="conteiner-form">
+           <div className="container-form-page">
+            <div className="container-form">
            <h1 className="title">Editar informações do Funcionário</h1>
-           <h3 className="message-return" style={{color: statusError ? 'red' :'green' } } >{message!== '' ? message : ''}</h3>
+           <p className="message-return" style={{color: statusError ? 'red' :'green' } } >{message!== '' ? message : ''}</p>
+           <div className="form">
            {
                isLoading ? <Loading/> :
                <Form validated={validated} handleSubmit={handleSubmit}/>
            }
+           </div>
+           </div>
            </div>
        );
      }

@@ -1,4 +1,5 @@
 import React,{useContext} from 'react';
+import './style.css';
 import context from '../../provider/context';
 import {Form , Col ,Button } from 'react-bootstrap';
 
@@ -6,14 +7,15 @@ function FormEmployee ({validated , handleSubmit}) {
     const  { employee , setEmployee } = useContext(context);
 
 return (
-    
+    <div className="container-form">
 <Form className="form-register" noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Row>
-          <Form.Group as={Col} md="10" controlId="validationCustom01">
+          <Form.Group as={Col} md="12" controlId="validationCustom01">
             <Form.Label>Nome</Form.Label>
             <Form.Control
               required
               type="text"
+              placeholder="nome"
               value={employee.nome}
               onChange={({target}) => setEmployee({...employee,nome:target.value}) }
             />
@@ -21,13 +23,12 @@ return (
           </Form.Group>
           </Form.Row>
           <Form.Row>
-          <Form.Group as={Col} md="10" controlId="validationCustom02">
+          <Form.Group as={Col} md="12" controlId="validationCustom02">
             <Form.Label>Email</Form.Label>
             <Form.Control
               required
               type="email"
               placeholder="email"
-              defaultValue="test@test.com"
               value={employee.email}
               onChange={({target}) => setEmployee({...employee,email:target.value}) }
             />
@@ -93,10 +94,10 @@ return (
         onChange={({target}) => setEmployee({...employee,data_admissao:target.value}) }
         />
         </Form.Group>
-        <Button type="submit">Confirmar</Button>
+        <Button className="button" type="submit">Confirmar</Button>
         
       </Form>
-     
+      </div>
     )
 }
 

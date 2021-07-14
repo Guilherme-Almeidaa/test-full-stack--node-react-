@@ -14,15 +14,18 @@ function Provider ({children}) {
     data_admissao: '',
    });
 
-   const [filterEmployee, setFilterEmploye] = useState({
+   const configFilter = {
     nome: '' ,
     setor: '',
     cargo: '',
     nivel: '',
-   })
+   }
+
+   const [filterEmployee, setFilterEmploye] = useState(configFilter)
    
     
 const context = {
+  configFilter,
   employees ,
   setEmployees,
   filterEmployee,

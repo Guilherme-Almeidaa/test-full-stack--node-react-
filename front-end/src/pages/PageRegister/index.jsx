@@ -31,10 +31,14 @@ function PageRegister() {
      console.log(message)
   
     return (
-        <div className="conteiner-form">
+        <div className="container-form-page">
+        <div className="container-form">
         <h1 className="title">Cadastrar Funcionário</h1>
-        <h3 className="message-return" style={{color: statusError ? 'red' :'green' } } >{message!== '' ? message : ''}</h3>
+        <p className="message-return" style={{color: statusError ? 'red' :'green' } } >{message!== '' ? message : ''}</p>
+        <div className="form">
         <Form validated={validated} handleSubmit={handleSubmit}/>
+        </div>
+        </div>
         </div>
     );
   }

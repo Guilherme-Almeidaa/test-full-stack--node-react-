@@ -2,6 +2,9 @@ const statusCodeMessages = require('../utilities/listStatusMessages');
 
 const checkFieldsIsEmpty = (fields) => {
   let result = true;
+  /* verifica se algum campo esta vazio
+     se estiver retorna o nome do campo caso contrario retorna true
+  */
   Object.entries(fields).forEach((item) => {
     if (item[1] === '') {
       result = [item[0]];
@@ -11,6 +14,9 @@ const checkFieldsIsEmpty = (fields) => {
 };
 
 const checkFieldsIsNull = (fields) => {
+  /* verifica se algum campo não existe
+     se não existir retorna o nome do campo caso contrario retorna true
+  */
   const fieldsCheck = {
     nome: fields.nome,
     email: fields.email,

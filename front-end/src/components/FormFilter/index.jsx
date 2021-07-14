@@ -5,17 +5,21 @@ import {Form , Col ,Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function Header () {
-    const {filterEmployee, setFilterEmploye} = useContext(context);
+    const {filterEmployee, setFilterEmploye, configFilter} = useContext(context);
 
     const changeFilterEmploye = ({target}) => {
          setFilterEmploye({...filterEmployee , [target.name]:target.value})
     }
 
+    const restartFilter = () => {
+        setFilterEmploye(configFilter)
+    }
+
     return (
-<div>
+<div className="cotainer-form-filter">
     <Form className="form-filter">
         <Form.Row>
-          <Form.Group as={Col} md="5" controlId="validationCustom01">
+          <Form.Group as={Col} md="10" controlId="validationCustom01">
             <Form.Label>Nome</Form.Label>
             <Form.Control
               required
@@ -35,6 +39,7 @@ function Header () {
           name="setor"
           onChange={changeFilterEmploye}
           value={filterEmployee.setor}>
+           <option value="">Setor</option>  
            <option value="Engenharia" >Engenharia</option>
            <option value="Compras" >Compras</option>
            <option value="Vendas" >Vendas</option>
@@ -48,6 +53,7 @@ function Header () {
           name="cargo"
            onChange={changeFilterEmploye}
           value={filterEmployee.cargo}>
+           <option value="">Cargo</option>
            <option value="Auxiliar" >Auxiliar</option>
            <option value="Técnico" >Técnico</option>
            <option value="Engenheiro" >Engenheiro</option>
@@ -61,6 +67,7 @@ function Header () {
           name="nivel"
          onChange={changeFilterEmploye}
           value={filterEmployee.nivel}>
+           <option value="">Nível</option>
            <option value="Junior" >Junior</option>
            <option value="Pleno" >Pleno</option>
            <option value="Senior" >Senior</option>
@@ -69,10 +76,11 @@ function Header () {
          
        </Form.Group>
        </Form.Row>
+       <Button className="button-restart"  onClick={restartFilter} variant="success">Reiniciar Filtro</Button>
     </Form>
 
     <Link to="/register" >
-        <Button variant="primary">Adicionar Funcionário</Button>
+        <Button className="button"  variant="primary">Adicionar Funcionário</Button>
     </Link>
 </div>
     )

@@ -25,7 +25,7 @@ function PageBegin () {
      },[statutsRequest,setEmployees,cargo,nivel,setor,nome,setEmployee]);
      
     return(
-        <div>
+        <div className="container-table">
              <h1 className="title" >Funcionários</h1>
              <FormFilter setIsLoading={setIsLoading} />
     {isLoading ? <Loading/> : <Table className="table-employees" striped bordered hover variant="dark">
@@ -38,6 +38,8 @@ function PageBegin () {
       <th>Setor</th>
       <th>Cargo</th>
       <th>Nível</th>
+      <th>Ultima edição</th>
+      <th>Data Cadastro</th>
       <th>Editar</th>
       <th>Excluir</th>
     </tr>

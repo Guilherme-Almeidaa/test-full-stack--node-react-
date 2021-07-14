@@ -5,10 +5,24 @@ import { requestDeleteEmployee } from '../../utilities/apiEmployees';
 
 
 function Employee ({ employee , statutsRequest , setStatusRequest }) {
-    const { nome,email,data_nascimento,data_admissao,setor,cargo,nivel,id } = employee;
+    const { 
+      audit_data_update ,
+      audit_data_insert,
+      nome,email,
+      data_nascimento,
+      data_admissao,
+      setor,
+      cargo,
+      nivel,
+      id, } = employee;
     const formatDate = (date) => {
-      const splitD = date.split('-');
-      return `${splitD[2]}-${splitD[1]}-${splitD[0]}`
+      if(!date) return '';
+      const dateFormated = new Date(date);
+      const day = dateFormated.getDay();
+      const dayFormated = day < 10 ? `0${day}`  : day
+      const month = dateFormated.getMonth();
+      const monthFormated = month < 10 ? `0${month}`  : month
+      return `${dayFormated}/${monthFormated}/${dateFormated.getFullYear()}`
     }
 
     const deleteEmploye = () => {
@@ -29,8 +43,10 @@ function Employee ({ employee , statutsRequest , setStatusRequest }) {
          <td>{setor}</td>
          <td>{cargo}</td>
          <td>{nivel}</td>
-         <td><Link to={`/employee/${employee.id}`} ><Button variant="primary" >Editar</Button></Link></td>
-         <td><Button onClick={deleteEmploye} variant="danger" >Exluir</Button></td>
+         <td>{formatDate(audit_data_update)}</td>
+         <th>{formatDate(audit_data_insert)}</th>
+         <td><Link to={`/employee/${employee.id}`} ><Button variant="warning" >Editar</Button></Link></td>
+         <td><Button  onClick={deleteEmploye} variant="danger" >Exluir</Button></td>
      </tr>
     )
 }

@@ -1,0 +1,37 @@
+.container-form-page {
+    display: flex;
+    justify-content: center;
+}
+
+.container-form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+}
+
+.form-register {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+}
+
+.message-return {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+}
+
+.select-form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}

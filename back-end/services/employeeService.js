@@ -39,7 +39,6 @@ const deleteEmployee = async (id) => {
 };
 
 const findByField = async (query) => {
-  console.log(query);
   const result = await Funcionarios.findAll({
     where: {
       [Op.and]: [
@@ -50,6 +49,9 @@ const findByField = async (query) => {
 
       ],
     },
+    order: [
+      ['nome', 'ASC'],
+    ],
   });
   return result;
 };
