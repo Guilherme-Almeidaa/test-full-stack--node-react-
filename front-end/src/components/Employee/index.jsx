@@ -5,27 +5,13 @@ import './style.css';
 import { requestDeleteEmployee } from '../../api/apiEmployees';
 
 function Employee({ employee, statutsRequest, setStatusRequest }) {
-  const {
-    audit_data_update,
-    audit_data_insert,
-    nome,
-    email,
-    data_nascimento,
-    data_admissao,
-    setor,
-    cargo,
-    nivel,
-    id,
-  } = employee;
-
   const formatDate = (date, increment) => {
     if (!date) return '';
     const dateFormated = new Date(date);
     /* 
-    O dia que retorna do formulaŕio dos campos de preenchimento de data retorna
-    com uma diferença de 1 a menos por isso uso o paramentro increment para
-    verificar na chamada da função se vem do banco de dados ou do formulaŕio,
-    caso venha do formulaŕio acrescenta + 1. 
+    O dia que retorna do formulaŕio com uma diferença de 1 a menos por isso 
+    uso o paramentro increment para verificar na chamada da função se vem 
+    do banco de dados ou do formulaŕio, caso venha do formulaŕio acrescenta + 1. 
     */
     const day = increment ? dateFormated.getDate() + 1 : dateFormated.getDate();
     const dayFormated = day < 10 ? `0${day}` : day;
@@ -39,7 +25,7 @@ function Employee({ employee, statutsRequest, setStatusRequest }) {
       'Tem certeza que deseja exluir o funcionário?'
     );
     if (responseUser) {
-      requestDeleteEmployee(id).then(_response => {
+      requestDeleteEmployee(employee.id).then(_response => {
         alert('Funcionário excluído');
       });
       setStatusRequest(!statutsRequest);
@@ -47,17 +33,17 @@ function Employee({ employee, statutsRequest, setStatusRequest }) {
   };
   return (
     <tr>
-      <td>{nome}</td>
-      <td>{email}</td>
-      <td>{formatDate(data_nascimento, true)}</td>
-      <td>{formatDate(data_admissao, true)}</td>
-      <td>{setor}</td>
-      <td>{cargo}</td>
-      <td>{nivel}</td>
-      <td>{formatDate(audit_data_update)}</td>
-      <th>{formatDate(audit_data_insert)}</th>
+      <td>{employee.nome}</td>
+      <td>{employee.email}</td>
+      <td>{formatDate(employee.data_nascimento, true)}</td>
+      <td>{formatDate(employee.data_admissao, true)}</td>
+      <td>{employee.setor}</td>
+      <td>{employee.cargo}</td>
+      <td>{employee.nivel}</td>
+      <td>{formatDate(employee.audit_data_update)}</td>
+      <th>{formatDate(employee.audit_data_insert)}</th>
       <td>
-        <Link to={`/employee/${id}`}>
+        <Link to={`/employee/${employee.id}`}>
           <Button className="button-edit" variant="outline-warning">
             Editar
           </Button>

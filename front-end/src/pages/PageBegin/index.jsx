@@ -20,8 +20,8 @@ function PageBegin() {
     setTimeout(() => {
       requestFilterEmployees(nome, setor, cargo, nivel).then(response => {
         setEmployees(response);
+        setIsLoading(false);
       });
-      setIsLoading(false);
     }, 500);
   }, [statutsRequest, setEmployees, cargo, nivel, setor, nome, setEmployee]);
 
