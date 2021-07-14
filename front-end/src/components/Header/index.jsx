@@ -1,24 +1,16 @@
 import React from 'react';
-import {Nav,Navbar,Container} from 'react-bootstrap';
+import { Navbar  , Nav } from 'react-bootstrap';
 function Header () {
     return (
-        <header>
-     
- 
-  <Navbar bg="primary" variant="dark">
-    <Container>
-    <Navbar.Brand href="/">Funcionários</Navbar.Brand>
-    <Nav className="me-auto">
-      <Nav.Link href="/">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
-    </Container>
-  </Navbar>
-
- 
-
-        </header>
+  <header>
+  <Navbar bg="dark" variant="dark">
+     <Navbar.Brand href="/">Funcionários</Navbar.Brand>
+     <Nav className="me-auto">
+        <Nav.Link href="/">Início</Nav.Link>
+        <Nav.Link href="/register">Adicionar Funcionário</Nav.Link>
+     </Nav>
+   </Navbar>
+  </header>
 
     )
 }

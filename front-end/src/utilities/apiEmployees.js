@@ -73,7 +73,6 @@ export const requestFilterEmployees = async (name,sector,office,level) => {
 }
 
 return axios.request(options).then((response) => {
-  console.log(response.data)
-    return response.data
+  return response.data
 })
 }

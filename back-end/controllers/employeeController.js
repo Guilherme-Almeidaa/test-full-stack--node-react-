@@ -59,7 +59,8 @@ const update = async (req, res) => {
 
 const insert = async (req, res) => {
   try {
-    const newEmploye = { ...req.body, audit_data_insert: new Date() };
+    const date = new Date();
+    const newEmploye = { ...req.body, audit_data_insert: date };
     const result = await employeeService.insert(newEmploye);
     res.status(statusCodeMessages.update);
     return res.json(result);

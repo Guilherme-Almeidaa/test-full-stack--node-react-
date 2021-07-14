@@ -41,6 +41,7 @@ return (
          <select
          onChange={({target}) => setEmployee({...employee,setor:target.value}) }
           value={employee.setor}>
+           <option value="">Setor</option> 
            <option value="Engenharia" >Engenharia</option>
            <option value="Compras" >Compras</option>
            <option value="Vendas" >Vendas</option>
@@ -53,6 +54,7 @@ return (
          <select
           onChange={({target}) => setEmployee({...employee,cargo:target.value}) }
           value={employee.cargo}>
+           <option value="">Cargo</option> 
            <option value="Auxiliar" >Auxiliar</option>
            <option value="Técnico" >Técnico</option>
            <option value="Engenheiro" >Engenheiro</option>
@@ -65,6 +67,7 @@ return (
          <select
           onChange={({target}) => setEmployee({...employee,nivel:target.value}) }
           value={employee.nivel}>
+           <option value="">Nível</option> 
            <option value="Junior" >Junior</option>
            <option value="Pleno" >Pleno</option>
            <option value="Senior" >Senior</option>

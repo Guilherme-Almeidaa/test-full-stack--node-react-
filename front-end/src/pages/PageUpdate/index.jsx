@@ -6,18 +6,16 @@ import Loading from '../../components/Loading';
 
 function PageUpdate({match}) {
     const id = match.params.id
-    console.log(typeof id)
     const  { setEmployee, employee } = useContext(context);
        
-       const [validated, setValidated] = useState(false);
-       const [message, setMessage] = useState('');
-       const [statusError,setStatusError] = useState(false);
-       const [ isLoading , setIsLoading] = useState(true);
+    const [validated, setValidated] = useState(false);
+    const [message, setMessage] = useState('');
+    const [statusError,setStatusError] = useState(false);
+    const [ isLoading , setIsLoading] = useState(true);
 
     useEffect(() => {
      findById(id).then((response) => {
         setEmployee(response);
-        
     })
     .catch((error) => {
         setMessage(error.response.data.error.message)

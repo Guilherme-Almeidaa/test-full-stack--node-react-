@@ -2,7 +2,7 @@ import React,{useContext} from 'react';
 import context from '../../provider/context';
 import './style.css';
 import {Form , Col ,Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+
 
 function Header () {
     const {filterEmployee, setFilterEmploye, configFilter} = useContext(context);
@@ -78,10 +78,6 @@ function Header () {
        </Form.Row>
        <Button className="button-restart"  onClick={restartFilter} variant="success">Reiniciar Filtro</Button>
     </Form>
-
-    <Link to="/register" >
-        <Button className="button"  variant="primary">Adicionar Funcionário</Button>
-    </Link>
 </div>
     )
 }

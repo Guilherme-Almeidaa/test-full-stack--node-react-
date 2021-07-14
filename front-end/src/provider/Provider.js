@@ -7,9 +7,9 @@ function Provider ({children}) {
     const [employee , setEmployee] = useState({
     nome: '' ,
     email: '',
-    setor: 'Engenharia',
-    cargo: 'Auxiliar',
-    nivel: 'Junior',
+    setor: '',
+    cargo: '',
+    nivel: '',
     data_nascimento: '',
     data_admissao: '',
    });

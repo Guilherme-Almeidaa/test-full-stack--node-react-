@@ -15,12 +15,13 @@ function Employee ({ employee , statutsRequest , setStatusRequest }) {
       cargo,
       nivel,
       id, } = employee;
-    const formatDate = (date) => {
+
+    const formatDate = (date,increment) => {
       if(!date) return '';
-      const dateFormated = new Date(date);
-      const day = dateFormated.getDay();
+      const dateFormated = new Date(date)
+      const day = increment ? dateFormated.getDate() + 1 : dateFormated.getDate()
       const dayFormated = day < 10 ? `0${day}`  : day
-      const month = dateFormated.getMonth();
+      const month = dateFormated.getMonth() + 1 ;
       const monthFormated = month < 10 ? `0${month}`  : month
       return `${dayFormated}/${monthFormated}/${dateFormated.getFullYear()}`
     }
@@ -38,14 +39,14 @@ function Employee ({ employee , statutsRequest , setStatusRequest }) {
      <tr>
          <td>{nome}</td>
          <td>{email}</td>
-         <td>{formatDate(data_nascimento)}</td>
-         <td>{formatDate(data_admissao)}</td>
+         <td>{formatDate(data_nascimento,true)}</td>
+         <td>{formatDate(data_admissao,true)}</td>
          <td>{setor}</td>
          <td>{cargo}</td>
          <td>{nivel}</td>
          <td>{formatDate(audit_data_update)}</td>
          <th>{formatDate(audit_data_insert)}</th>
-         <td><Link to={`/employee/${employee.id}`} ><Button variant="warning" >Editar</Button></Link></td>
+         <td><Link to={`/employee/${id}`} ><Button variant="warning" >Editar</Button></Link></td>
          <td><Button  onClick={deleteEmploye} variant="danger" >Exluir</Button></td>
      </tr>
     )
